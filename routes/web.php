@@ -15,9 +15,9 @@
 | Common routes starts here
 |--------------------------------------------------------------------------
 */
-Route::get('/', function () {
-	return view('auth.login');
-})->middleware("guest")->name('index');
+// Route::get('/', function () {
+// 	return view('auth.login');
+// })->middleware("guest")->name('index');
 
 Auth::routes();
 
@@ -40,7 +40,7 @@ Route::get('email/verification/{user}/{token}','VerifyUserController')->name('ve
 | Frontend routes ends here
 |--------------------------------------------------------------------------
 */
-
+Route::view('/','auth.login')->name('index')->middleware('guest');
 
 /*
 |--------------------------------------------------------------------------
